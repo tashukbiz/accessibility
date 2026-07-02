@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work &mdash; Tatiana Shukletsova</title>
+  <meta name="description" content="Accessibility case studies by Tatiana Shukletsova, including a WCAG 2.2 AA audit of the I Work for NSW homepage.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Tatiana Shukletsova<span class="brand-sub">Digital accessibility</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html" aria-current="page">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="wrap">
+    <h1>Work</h1>
+    <p class="lede">Independent, self-directed accessibility evaluations &mdash; the kind of work I do for clients, shown end to end: how I test, what I find, and how I&rsquo;d fix it.</p>
+
+    <section class="section" aria-labelledby="cs-h">
+      <h2 id="cs-h">Case studies</h2>
+      <div class="grid cols-2">
+
+        <a class="card-link" href="case-iworkfornsw.html">
+          <div class="card">
+            <p class="tag">WCAG 2.2 AA &middot; Web</p>
+            <h3>Accessibility audit &mdash; I Work for NSW</h3>
+            <p>A full evaluation of the NSW Government&rsquo;s public jobs homepage: 25 issues, two root causes, and a fix-first-things-first plan. Keyboard and VoiceOver testing, mapped to WCAG&nbsp;2.2&nbsp;AA.</p>
+            <p class="more">Read the case study</p>
+          </div>
+        </a>
+
+        <!-- To add the mobile-app case study later: copy case-iworkfornsw.html to
+             case-mobile-app.html, replace its content, then turn the card below into a
+             real link (add href and the card-link wrapper like the one above). -->
+        <div class="card card--soon" aria-label="Upcoming case study">
+          <p class="tag">Coming soon &middot; Mobile app</p>
+          <h3>Mobile app accessibility review</h3>
+          <p>A native mobile evaluation using VoiceOver on iOS &mdash; touch targets, focus order, and screen-reader labelling. In progress.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Tatiana Shukletsova &mdash; Digital accessibility specialist. Sydney &amp; remote (Australia).</p>
+      <p><a href="mailto:tashukwork@gmail.com">tashukwork@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/tatianashuk">LinkedIn</a></p>
+      <p class="fineprint">This site is built to meet WCAG&nbsp;2.2&nbsp;AA. Read the <a href="accessibility.html">accessibility statement</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

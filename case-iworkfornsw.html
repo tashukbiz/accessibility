@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility audit: I Work for NSW &mdash; Tatiana Shukletsova</title>
+  <meta name="description" content="Independent WCAG 2.2 AA evaluation of the I Work for NSW homepage: 25 issues, two root causes, and clear fixes. Keyboard and VoiceOver testing by Tatiana Shukletsova.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Tatiana Shukletsova<span class="brand-sub">Digital accessibility</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html" aria-current="page">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="wrap">
+    <p class="eyebrow">Case study &middot; WCAG 2.2 AA &middot; WCAG-EM</p>
+    <h1>Accessibility audit &mdash; I Work for NSW</h1>
+    <p class="lede">An independent evaluation of the homepage of the NSW Government&rsquo;s public jobs website. I identified 25 issues &mdash; and found that most of them trace back to just two root causes.</p>
+
+    <dl class="meta">
+      <dt>Role</dt><dd>Self-directed accessibility evaluation</dd>
+      <dt>Standard</dt><dd>WCAG&nbsp;2.2 Level&nbsp;AA, following the W3C WCAG-EM method</dd>
+      <dt>Scope</dt><dd>Homepage of <a href="https://iworkfor.nsw.gov.au/">iworkfor.nsw.gov.au</a> (public content)</dd>
+      <dt>Tools</dt><dd>Keyboard, VoiceOver (Safari, macOS &amp; iOS), axe DevTools, WAVE, Lighthouse, Web Developer, CSS-off and text-spacing checks</dd>
+      <dt>Date</dt><dd>June 2026</dd>
+    </dl>
+
+    <div class="stats" aria-label="Findings by severity">
+      <div class="stat"><span class="num">25</span><span class="lbl">issues found</span></div>
+      <div class="stat"><span class="num">1</span><span class="lbl">critical</span></div>
+      <div class="stat"><span class="num">12</span><span class="lbl">serious</span></div>
+      <div class="stat"><span class="num">9</span><span class="lbl">moderate</span></div>
+      <div class="stat"><span class="num">3</span><span class="lbl">minor</span></div>
+    </div>
+
+    <div class="prose">
+      <h2>Context</h2>
+      <p>&ldquo;I Work for NSW&rdquo; is the NSW Government&rsquo;s public jobs platform, used by people across the state to find and apply for government roles. As a public service, it needs to work for everyone &mdash; including the many job seekers with a temporary or permanent disability who rely on assistive technology. I chose it for an independent evaluation: to test the homepage against WCAG&nbsp;2.2 Level&nbsp;AA and to practise the full audit process from planning to reporting.</p>
+
+      <h2>Approach</h2>
+      <p>I evaluated the homepage following the WCAG-EM methodology, combining manual and automated testing:</p>
+      <ul>
+        <li><strong>Keyboard testing</strong> &mdash; reaching and operating every interactive element with the keyboard alone.</li>
+        <li><strong>Automated and tool-assisted checks</strong> &mdash; WAVE, Web Developer, Lighthouse and axe DevTools, plus manual checks with CSS disabled, text enlarged, and increased text spacing.</li>
+        <li><strong>Screen-reader testing</strong> &mdash; VoiceOver in Safari on desktop (macOS) and on iPhone (iOS), with a Chrome spot-check on desktop.</li>
+      </ul>
+      <p>For every issue I wrote a practical fix recommendation, drawing on my front-end development background. I used AI to support the process where it helped, and carried out the testing and judgement myself.</p>
+
+      <h2>What I found</h2>
+      <p>The homepage has a solid foundation: a clean layout, inclusive content, and accessibility basics such as skip links, landmarks and image alternatives already in place. However, it does not yet meet WCAG&nbsp;2.2 Level&nbsp;AA. I identified 25 issues, and most of them trace back to just two root causes.</p>
+    </div>
+
+    <div class="callout">
+      <h3>Two root causes behind most issues</h3>
+      <ol>
+        <li><strong>The visible focus indicator has been removed across the whole site.</strong> Keyboard users cannot see where they are on the page.</li>
+        <li><strong>The search dropdowns are custom-built without proper semantics.</strong> The &ldquo;Find a job&rdquo; dropdowns lack the roles, states and keyboard support that assistive technology relies on.</li>
+      </ol>
+    </div>
+
+    <div class="prose">
+      <p>For example, in the location filter, VoiceOver announces &ldquo;Sydney Region&rdquo; only as an unticked checkbox &mdash; with no indication that it can be expanded and no way to reach its sub-regions. A screen-reader user can select a whole region, but not an individual area. The same form cannot be fully operated by keyboard, and the mobile menu cannot be opened by keyboard at all &mdash; the single critical issue.</p>
+    </div>
+
+    <h2>Selected findings</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>Five representative issues. The full report lists all 25, each with steps to reproduce and a recommended fix.</caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">What&rsquo;s wrong</th>
+            <th scope="col">WCAG&nbsp;2.2</th>
+            <th scope="col">Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">H-10</th>
+            <td>The mobile hamburger menu can&rsquo;t be reached or opened by keyboard, so none of the navigation is available in the mobile layout.</td>
+            <td>2.1.1 Keyboard (A)</td>
+            <td><span class="sev sev-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <th scope="row">H-06</th>
+            <td>No visible focus indicator on the header links, so a keyboard user can&rsquo;t tell which item they&rsquo;re on.</td>
+            <td>2.4.7 Focus Visible (AA)</td>
+            <td><span class="sev sev-serious">Serious</span></td>
+          </tr>
+          <tr>
+            <th scope="row">H-05</th>
+            <td>In the search dropdowns, the arrow keys scroll the whole page instead of moving through the options.</td>
+            <td>2.1.1 Keyboard (A)</td>
+            <td><span class="sev sev-serious">Serious</span></td>
+          </tr>
+          <tr>
+            <th scope="row">H-16</th>
+            <td>&ldquo;Sydney Region&rdquo; is expandable for sighted users but not for screen readers, so sub-regions can&rsquo;t be reached.</td>
+            <td>4.1.2 Name, Role, Value (A)</td>
+            <td><span class="sev sev-serious">Serious</span></td>
+          </tr>
+          <tr>
+            <th scope="row">H-21</th>
+            <td>Card text overflows its fixed-height box and overlaps the arrow icon when users increase text spacing.</td>
+            <td>1.4.12 Text Spacing (AA)</td>
+            <td><span class="sev sev-moderate">Moderate</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>A fix in practice</h2>
+    <p class="prose">Root cause one is a good example of high impact for very little work. On the live site, the focus indicator is deliberately switched off &mdash; this is the actual rule responsible:</p>
+    <div class="fix-grid">
+      <div>
+        <h3>Before &mdash; the real code that hides focus</h3>
+        <pre><code>.root-layout a:focus-visible,
+.root-layout a:focus {
+  outline: none !important;
+}</code></pre>
+      </div>
+      <div>
+        <h3>After &mdash; a clear, visible focus style</h3>
+        <pre><code>.root-layout a:focus-visible {
+  outline: 3px solid #0a5666;
+  outline-offset: 2px;
+  border-radius: 3px;
+}</code></pre>
+      </div>
+    </div>
+    <p class="prose">Removing that <code>outline: none !important</code> rule and defining a visible focus style instead restores the focus indicator across the whole site and resolves a group of findings in one change. (It&rsquo;s the same approach used on this very page &mdash; try tabbing through it.)</p>
+
+    <h2 id="evidence">Evidence</h2>
+    <p class="prose">Screenshots captured during testing. Select any image to open it full size in a new tab.</p>
+    <div class="gallery">
+      <figure>
+        <a href="assets/screenshots/H-01.jpg" target="_blank" rel="noopener">
+          <img src="assets/screenshots/H-01.jpg" alt="Close-up of the open Location dropdown. The region options &mdash; Sydney Region, Central &amp; North Coasts, Illawarra &amp; South Coast, Regional NSW, Statewide &mdash; each show a checkbox and an expand chevron, but none shows a visible keyboard focus indicator.">
+        </a>
+        <figcaption><strong>H-01</strong> <span class="tag">Serious &middot; 2.4.7 Focus Visible</span><br>Moving through the option list by keyboard, no focus indicator is visible &mdash; you can&rsquo;t tell which item you&rsquo;re on. <span class="figlink">(<a href="assets/screenshots/H-01.jpg" target="_blank" rel="noopener">open full size</a>)</span></figcaption>
+      </figure>
+
+      <figure>
+        <a href="assets/screenshots/H-02.png" target="_blank" rel="noopener">
+          <img src="assets/screenshots/H-02.png" alt="The Occupation dropdown open. The &lsquo;Administration and Clerical&rsquo; group is expanded, revealing Administration Officers, Claims Processing and Clinical Support Officers beneath it.">
+        </a>
+        <figcaption><strong>H-02</strong> <span class="tag">Serious &middot; 2.1.1 Keyboard</span><br>The list doesn&rsquo;t scroll to keep the focused option in view, so options below the visible area can&rsquo;t be reached by keyboard. <span class="figlink">(<a href="assets/screenshots/H-02.png" target="_blank" rel="noopener">open full size</a>)</span></figcaption>
+      </figure>
+
+      <figure>
+        <a href="assets/screenshots/H-03.png" target="_blank" rel="noopener">
+          <img src="assets/screenshots/H-03.png" alt="The search form with &lsquo;More options&rsquo; expanded (Organisation and Salary now shown). The Occupation dropdown is still open, yet the visible focus ring has moved out to the Organisation field.">
+        </a>
+        <figcaption><strong>H-03</strong> <span class="tag">Serious &middot; 2.4.3 Focus Order</span><br>Focus leaves the open dropdown and lands on the next field while the dropdown stays open. <span class="figlink">(<a href="assets/screenshots/H-03.png" target="_blank" rel="noopener">open full size</a>)</span></figcaption>
+      </figure>
+
+      <figure>
+        <a href="assets/screenshots/H-12.png" target="_blank" rel="noopener">
+          <img src="assets/screenshots/H-12.png" alt="The Location field focused with a visible outline. The VoiceOver caption reads &lsquo;Locations, button&rsquo;.">
+        </a>
+        <figcaption><strong>H-12</strong> <span class="tag">Moderate &middot; 4.1.2 Name, Role, Value</span><br>The control is announced only as a plain &lsquo;button&rsquo; &mdash; not as an expandable combobox, and with no open or closed state. <span class="figlink">(<a href="assets/screenshots/H-12.png" target="_blank" rel="noopener">open full size</a>)</span></figcaption>
+      </figure>
+
+      <figure>
+        <a href="assets/screenshots/H-13.jpg" target="_blank" rel="noopener">
+          <img src="assets/screenshots/H-13.jpg" alt="The search form after choosing More options, now showing Organisation, Work type and Salary. The toggle reads &lsquo;Less options&rsquo; and the VoiceOver caption reads &lsquo;Less options&rsquo;.">
+        </a>
+        <figcaption><strong>H-13</strong> <span class="tag">Serious &middot; 4.1.2 Name, Role, Value</span><br>VoiceOver announces only the changed label &lsquo;Less options&rsquo;, not that the section expanded &mdash; and the new fields appear before the button, so they&rsquo;re easily missed. <span class="figlink">(<a href="assets/screenshots/H-13.jpg" target="_blank" rel="noopener">open full size</a>)</span></figcaption>
+      </figure>
+
+      <figure>
+        <a href="assets/screenshots/H-14.png" target="_blank" rel="noopener">
+          <img src="assets/screenshots/H-14.png" alt="The Location dropdown is open with Sydney Region and Central &amp; North Coasts visible, but the VoiceOver caption still reads only &lsquo;Locations, button&rsquo;.">
+        </a>
+        <figcaption><strong>H-14</strong> <span class="tag">Serious &middot; 4.1.2 Name, Role, Value</span><br>Opening the dropdown announces nothing &mdash; a screen-reader user gets no signal that a list has appeared. <span class="figlink">(<a href="assets/screenshots/H-14.png" target="_blank" rel="noopener">open full size</a>)</span></figcaption>
+      </figure>
+
+      <figure>
+        <a href="assets/screenshots/H-15.jpg" target="_blank" rel="noopener">
+          <img src="assets/screenshots/H-15.jpg" alt="The I Work for NSW header and hero. With the Location control active, the VoiceOver caption reads &lsquo;for screen reader, edit text&rsquo; on an otherwise empty element.">
+        </a>
+        <figcaption><strong>H-15</strong> <span class="tag">Moderate &middot; 4.1.2 / 1.3.1</span><br>VoiceOver lands on an empty &lsquo;for screen reader&rsquo; element &mdash; a confusing stop that conveys no purpose before the options. <span class="figlink">(<a href="assets/screenshots/H-15.jpg" target="_blank" rel="noopener">open full size</a>)</span></figcaption>
+      </figure>
+
+      <figure>
+        <a href="assets/screenshots/H-16.png" target="_blank" rel="noopener">
+          <img src="assets/screenshots/H-16.png" alt="The Location dropdown open with &lsquo;Sydney Region&rsquo; focused. The VoiceOver caption reads &lsquo;Select Sydney Region, unticked, tickbox&rsquo; &mdash; with no mention that the item can be expanded to reveal its sub-regions.">
+        </a>
+        <figcaption><strong>H-16</strong> <span class="tag">Serious &middot; 4.1.2 Name, Role, Value</span><br>&lsquo;Sydney Region&rsquo; can be expanded for sighted users, but that&rsquo;s never exposed to screen readers, so its sub-regions can&rsquo;t be reached. <span class="figlink">(<a href="assets/screenshots/H-16.png" target="_blank" rel="noopener">open full size</a>)</span></figcaption>
+      </figure>
+
+      <figure>
+        <a href="assets/screenshots/H-19.png" target="_blank" rel="noopener">
+          <img src="assets/screenshots/H-19.png" alt="The homepage with CSS switched off. The Location options appear as plain text (Sydney Region and its suburbs, Central &amp; North Coasts, and so on) with no checkboxes.">
+        </a>
+        <figcaption><strong>H-19</strong> <span class="tag">Moderate &middot; 1.3.1 Info and Relationships</span><br>With CSS off, no real checkboxes appear &mdash; the selection controls aren&rsquo;t native form elements, so they can&rsquo;t be used. <span class="figlink">(<a href="assets/screenshots/H-19.png" target="_blank" rel="noopener">open full size</a>)</span></figcaption>
+      </figure>
+
+      <figure>
+        <a href="assets/screenshots/H-21.png" target="_blank" rel="noopener">
+          <img src="assets/screenshots/H-21.png" alt="Four content cards with increased text spacing applied. In &lsquo;Our commitment to candidates&rsquo; the last line runs into the arrow icon, and in &lsquo;Adjustments for individual needs&rsquo; the text overlaps &lsquo;your role&rsquo;.">
+        </a>
+        <figcaption><strong>H-21</strong> <span class="tag">Moderate &middot; 1.4.12 Text Spacing</span><br>With increased text spacing, card text overflows its fixed-height box and overlaps the arrow icon. <span class="figlink">(<a href="assets/screenshots/H-21.png" target="_blank" rel="noopener">open full size</a>)</span></figcaption>
+      </figure>
+    </div>
+
+    <h2>Recommendation</h2>
+    <div class="prose">
+      <p>I&rsquo;d start with the two root causes, because fixing them resolves a large share of the findings at once:</p>
+      <ul>
+        <li><strong>Restore a clear, visible focus style site-wide.</strong> A small change with high impact &mdash; it addresses the focus-visibility issues in a single step.</li>
+        <li><strong>Rebuild the &ldquo;Find a job&rdquo; form and its dropdowns using standard, accessible patterns</strong> (the ARIA Authoring Practices combobox and tree patterns). This fixes most of the keyboard and screen-reader findings &mdash; roughly a third of the issues overall.</li>
+      </ul>
+      <h2>Next steps</h2>
+      <p>This evaluation focused on the homepage. As a next step, I would apply the same process to the other key pages (search results and a job advertisement) and re-verify the screen-reader findings in a second screen reader such as NVDA, to confirm they are not specific to VoiceOver.</p>
+    </div>
+
+    <div class="callout">
+      <h2>Read the full report</h2>
+      <p>All 25 findings with steps to reproduce, plus the complete WCAG&nbsp;2.2 checklist, are available to download:</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="downloads/iWorkForNSW_Audit_Report.pdf">Full report (PDF)</a>
+        <a class="btn btn-ghost" href="downloads/iWorkForNSW_Audit_Report.xlsx">Findings &amp; checklist (Excel)</a>
+      </div>
+      <p class="fineprint">Independent, point-in-time evaluation for portfolio purposes. Not commissioned or endorsed by the site owner; findings reflect the homepage as tested in June&nbsp;2026.</p>
+    </div>
+
+    <p><a href="work.html">&larr; Back to work</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Tatiana Shukletsova &mdash; Digital accessibility specialist. Sydney &amp; remote (Australia).</p>
+      <p><a href="mailto:tashukwork@gmail.com">tashukwork@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/tatianashuk">LinkedIn</a></p>
+      <p class="fineprint">This site is built to meet WCAG&nbsp;2.2&nbsp;AA. Read the <a href="accessibility.html">accessibility statement</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

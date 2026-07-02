@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility statement &mdash; Tatiana Shukletsova</title>
+  <meta name="description" content="Accessibility statement for Tatiana Shukletsova's portfolio: target standard, measures taken, known limitations, and how to give feedback.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Tatiana Shukletsova<span class="brand-sub">Digital accessibility</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="accessibility.html" aria-current="page">Accessibility</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="wrap">
+    <h1>Accessibility statement</h1>
+    <div class="prose">
+      <p class="lede">I audit other people&rsquo;s sites, so it&rsquo;s only fair to hold my own to the same standard. This page explains what I&rsquo;ve done and where the limits are.</p>
+
+      <h2>Target standard</h2>
+      <p>This website aims to meet <strong>WCAG&nbsp;2.2 Level&nbsp;AA</strong>. Accessibility isn&rsquo;t a one-time tick, so I treat this as ongoing rather than &ldquo;finished&rdquo;.</p>
+
+      <h2>How this site is built</h2>
+      <ul>
+        <li>Semantic HTML with clear landmarks (<code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>) and one <code>&lt;h1&gt;</code> per page.</li>
+        <li>A visible &ldquo;Skip to main content&rdquo; link that moves focus to the main region.</li>
+        <li>A clear, visible focus indicator on every interactive element &mdash; the exact thing missing from many sites I test.</li>
+        <li>Full keyboard operability. There are no custom widgets or keyboard traps; navigation is plain links that work without JavaScript.</li>
+        <li>Text and interface colours chosen to meet AA contrast; layout reflows to narrow screens and to 200% zoom.</li>
+        <li>Reduced-motion support for anyone who prefers less animation.</li>
+        <li>The current page is marked in the navigation with <code>aria-current</code> so screen-reader users know where they are.</li>
+      </ul>
+
+      <h2>How it was tested</h2>
+      <p>Keyboard-only navigation, VoiceOver on macOS and iOS, colour-contrast checks, zoom and text-spacing checks, and automated tools (axe, WAVE, Lighthouse) as a starting point. I invite you to test it too &mdash; try tabbing through any page and watch the focus indicator move.</p>
+
+      <h2>Known limitations</h2>
+      <p>The downloadable reports (PDF and Excel) are working documents and may not yet be fully tagged for accessibility. I&rsquo;m happy to provide the same information in another format on request. If you find anything on this site that doesn&rsquo;t work for you, I&rsquo;d genuinely like to know.</p>
+
+      <h2>Feedback</h2>
+      <p>Email me at <a href="mailto:tashukwork@gmail.com">tashukwork@gmail.com</a> and I&rsquo;ll respond as soon as I can, and fix what I can.</p>
+
+      <p class="fineprint">Last reviewed: June&nbsp;2026.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Tatiana Shukletsova &mdash; Digital accessibility specialist. Sydney &amp; remote (Australia).</p>
+      <p><a href="mailto:tashukwork@gmail.com">tashukwork@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/tatianashuk">LinkedIn</a></p>
+      <p class="fineprint">This site is built to meet WCAG&nbsp;2.2&nbsp;AA. Read the <a href="accessibility.html">accessibility statement</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>

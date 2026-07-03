@@ -197,12 +197,12 @@ pre {
 .fix-grid h3 { margin: 0 0 .4rem; font-size: 1.05rem; font-family: var(--sans); font-weight: 600; }
 
 /* ---------- evidence gallery ---------- */
-.gallery { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 1.4rem 0; }
+.gallery { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 1.4rem 0; align-items: start; }
 .gallery figure { margin: 0; background: var(--surface); border: none; border-radius: var(--radius); overflow: hidden; }
 .gallery figure a { display: block; line-height: 0; }
 .gallery figure img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--line); }
-.gallery figcaption { line-height: 1.55; font-size: .95rem; color: var(--ink); padding: 1rem 1.1rem 1.1rem; }
-.gallery .figlink { display: inline-block; margin-top: .55rem; padding: .1rem 0; color: var(--accent-dark); font-size: 1rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.gallery figcaption { line-height: 1.55; font-size: .95rem; color: var(--ink); padding: 1.1rem 1.3rem 1.5rem; }
+.gallery .figlink { display: inline-block; margin-top: 1.2rem; padding: .1rem 0; color: var(--accent-dark); font-size: 1rem; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .gallery .figlink:hover { color: var(--accent); }
 
 /* ---------- definition-style meta list ---------- */

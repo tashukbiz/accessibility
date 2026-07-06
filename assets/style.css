@@ -131,7 +131,7 @@ h3 { font-size: 1.25rem; margin: 1.8rem 0 .6rem; font-weight: 600; }
 .btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
 .btn-ghost { background: transparent; color: var(--accent-dark); }
-.btn-ghost:hover { background: var(--surface); color: var(--accent-dark); }
+.btn-ghost:hover { background: var(--surface-2); border-color: var(--accent-dark); color: var(--accent-dark); }
 
 /* ---------- cards ---------- */
 .grid { display: grid; gap: var(--gap); }
